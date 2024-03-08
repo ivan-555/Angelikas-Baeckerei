@@ -1,0 +1,229 @@
+header{
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    background: white;
+    z-index: 99;
+    width: 100vw;
+    max-width: 2000px;
+}
+
+header .wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 75%;
+}
+
+header .logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: fadeFromLeft 1s forwards;
+}
+
+header .logo h1{
+    font-size: 1.5rem;
+    font-weight: 700;
+    user-select: none;
+    color: var(--main-color-dark);
+}
+
+header .logo img{
+    height: 100px;
+    width: 100px;
+}
+
+header nav{
+    display: flex;
+    gap: 50px;
+    font-size: 1.2rem;
+}
+
+header nav a{
+    color: var(--main-color-dark);
+    cursor: pointer;
+    transition: transform 1s, color .3s;
+    font-weight: 500;
+    padding: 30px 0;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+header nav a:nth-child(2){
+    animation-delay: 200ms;
+}
+header nav a:nth-child(3){
+    animation-delay: 300ms;
+}
+header nav a:nth-child(4){
+    animation-delay: 400ms;
+}
+header nav a:nth-child(5){
+    animation-delay: 500ms;
+}
+header nav a:nth-child(6){
+    animation-delay: 600ms;
+}
+
+header nav a:hover,
+header nav a.active{
+    color: var(--main-color-hover);
+    transform: translateY(-8px);
+}
+
+.hamburger{
+    display: none;
+}
+
+@media (max-width: 1650px) {
+    .hamburger{
+        cursor: pointer;
+        display: block;
+        position: absolute;
+        top: 30px;
+        left: -80px;
+        height: 40px;
+        width: 50px;
+    }
+
+    .hamburger .bar{
+        height: 3px;
+        border-radius: 5px;
+        width: 30px;
+        background: black;
+        background: var(--main-color-dark);
+        position: absolute;
+    }
+
+    .hamburger .bar.one{
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .hamburger .bar.two{
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .hamburger .bar.three{
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    @keyframes bar1toX {
+      50%{
+        transform: rotate(0deg);
+      }
+      100%{
+        transform: rotate(-45deg);
+        top: 19px;
+      }
+    }
+
+    @keyframes bar2toX {
+        50%{
+          opacity: 1;
+        }
+        100%{
+          opacity: 0;
+        }
+    }
+
+    @keyframes bar3toX {
+        50%{
+          transform: rotate(0deg);
+        }
+        100%{
+          transform: rotate(45deg);
+          bottom: 18px;
+        }
+    }
+
+    @keyframes bar1toHamburger {
+        50%{
+            transform: rotate(0deg);
+          }
+        0%{
+            transform: rotate(-45deg);
+            top: 19px;
+        }
+    }
+
+    @keyframes bar2toHamburger {
+        50%{
+            opacity: 1;
+          }
+        0%{
+            opacity: 0;
+        }
+    }
+
+    @keyframes bar3toHamburger {
+        50%{
+            transform: rotate(0deg);
+          }
+        0%{
+            transform: rotate(45deg);
+            bottom: 18px;
+        }
+    }
+    
+    .hamburger.toX .bar.one{
+        animation: bar1toX  .5s forwards;
+    }
+    .hamburger.toX .bar.two{
+        animation: bar2toX  .5s forwards;
+    }
+    .hamburger.toX .bar.three{
+        animation: bar3toX  .5s forwards;
+    }
+
+    .hamburger.toHamburger .bar.one{
+        animation: bar1toHamburger  .5s forwards;
+    }
+    .hamburger.toHamburger .bar.two{
+        animation: bar2toHamburger  .5s forwards;
+    }
+    .hamburger.toHamburger .bar.three{
+        animation: bar3toHamburger  .5s forwards;
+    }
+
+    header nav{
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -400px;
+        bottom: 0;
+        width: 400px;
+        background: rgba(255, 255, 255, 0.885);
+        align-items: center;
+        justify-content: center;
+        transition: all 0.5s ease-in-out;
+    }
+}
+
+@media (max-width: 1450px) {
+    .hamburger{
+        transition: all .5s;
+    }
+
+    .hamburger.shiftRight{
+        left: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    header .wrapper{
+        width: 100%;
+    }
+
+    header nav{
+       width: 100%;
+       right: -100%;
+    }
+}
