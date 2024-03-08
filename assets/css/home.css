@@ -1,0 +1,111 @@
+#home{
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--header-height);
+    scroll-margin-top: var(--header-height);
+}
+
+#home .topSection{
+    display: flex;
+    height: 100%;
+}
+
+#home .topSection .mainImg{
+    height: 100%;
+    width: 60%;
+}
+
+#home .topSection aside{
+    background: var(--main-color-dark);
+    flex: 1;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+}
+
+#home .topSection aside h1{
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+#home .topSection aside p{
+    font-size: 1.1rem;
+    font-weight: 100;
+    font-family: "Alex Brush", serif;
+    font-size: 1.7rem;
+}
+
+
+
+@media (max-width: 1270px) {
+    #home .topSection aside h1{
+        font-size: 2rem;
+    }
+    #home .topSection aside p{
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 1100px) {
+    #home{
+        height: auto;
+    }
+    #home .topSection{
+        flex-direction: column;
+        height: calc(100vh - var(--header-height));
+    }
+    #home .topSection .mainImg{
+        height: 70%;
+        width: 100%;
+    }
+    #home .topSection aside{
+       text-align: center;
+    }
+}
+
+
+/* resolve mainImg squeeze Problem on smaller screen */
+@media (max-width: 850px) {
+    #home .topSection .mainImg{
+       width: 105%;
+    }
+}
+@media (max-width: 800px) {
+    #home .topSection .mainImg{
+       width: 110%;
+    }
+}
+@media (max-width: 750px) {
+    #home .topSection .mainImg{
+       width: 115%;
+    }
+}
+@media (max-width: 700px) {
+    #home .topSection .mainImg{
+       width: 120%;
+    }
+}
+@media (max-width: 650px) {
+    #home .topSection .mainImg{
+       width: 125%;
+    }
+}
+@media (max-width: 600px) {
+    #home .topSection .mainImg{
+       width: 140%;
+    }
+}
+@media (max-width: 550px) {
+    #home .topSection .mainImg{
+       width: 160%;
+    }
+}
+@media (max-width: 500px) {
+    #home .topSection .mainImg{
+       width: 180%;
+    }
+}
