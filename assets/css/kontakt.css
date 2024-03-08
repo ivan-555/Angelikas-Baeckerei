@@ -1,0 +1,82 @@
+#kontakt{
+    height: 500px;
+    padding: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#kontakt .decoBar{
+    content: "";
+    width: 30%;
+    height: 1px;
+    background: var(--main-color-dark);
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transform: translateX(-600px);
+    transition: 1s;
+}
+
+#kontakt .decoBar.show{
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#kontakt ul li{
+    position: relative;
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+#kontakt ul li:nth-child(1){
+    font-weight: 600;
+    margin-bottom: 60px;
+    font-size: 1.5rem;
+}
+
+#kontakt ul li a{
+    transition: color .3s;
+}
+
+#kontakt ul li a:hover{
+    color: var(--main-color-hover);
+}
+
+#kontakt ul li i{
+    position: absolute;
+    left: -45px;
+    background: var(--main-color-dark);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: .8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+#kontakt ul li i.fa-address-book{
+    background: none;
+    color: black;
+    font-size: 2rem;
+}
+
+@media (max-width: 1000px) {
+    #kontakt .decoBar{
+        transform: translateX(-200px);
+    }
+    #kontakt .decoBar{
+        width: 60%;
+    }
+}
+
+@media (max-width: 700px) {
+    #kontakt .decoBar{
+        width: 70%;
+    }
+}
