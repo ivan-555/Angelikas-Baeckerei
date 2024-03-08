@@ -3,7 +3,6 @@
     display: flex;
     flex-direction: column;
     margin-top: var(--header-height);
-    background: red;
     scroll-margin-top: var(--header-height);
 }
 
